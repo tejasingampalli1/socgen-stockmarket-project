@@ -7,11 +7,13 @@ import javax.persistence.*;
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int ind;
+    private int id;
     private String name;
     private long turnover;
     private String ceo;
     private String breif;
+    private String bod;
+
 
     @ManyToOne(cascade=CascadeType.ALL)
     private Sector sector;
@@ -20,20 +22,20 @@ public class Company {
         super();
     }
 
-    public Company(int ind, String name, long turnover, String ceo, String breif) {
-        this.ind = ind;
+    public Company(int id, String name, long turnover, String ceo, String breif) {
+        this.id = id;
         this.name = name;
         this.turnover = turnover;
         this.ceo = ceo;
         this.breif = breif;
     }
 
-    public int getInd() {
-        return ind;
+    public int getId() {
+        return id;
     }
 
-    public void setInd(int ind) {
-        this.ind = ind;
+    public void setId(int ind) {
+        this.id = id;
     }
 
     public String getName() {
@@ -75,4 +77,13 @@ public class Company {
     public void setSector(Sector sector) {
         this.sector = sector;
     }
+
+    public String getBod() {
+        return bod;
+    }
+
+    public void setBod(String bod) {
+        this.bod = bod;
+    }
+
 }
